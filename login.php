@@ -9,7 +9,7 @@
         <link type="text/css" rel="stylesheet" href="css/main.css" />
     </head>
     <body>
-                <form action="controllers/login.controller.php" method="POST" width="50" height="50">
+                <form action="controller/login.controller.php" method="POST" width="50" height="50">
                     <span>Please Enter your Login Details</span>
                     <label for="username">Username</label>
                     <input class="textfield" id="username" name="username" type="text" /><br />
@@ -20,8 +20,7 @@
 					<label><input type="radio" name="group1" value="adminstrator"/>adminstrator<label/>
 					</br>
 					<input name="dologin" type="submit" value="Login" />
-					
-                    <span class="loginerror"><?php echo ($_GET['error'] == 1) ? 'Invalid user name and password.' : ''; ?></span>
+                    <span class="loginerror"><?php echo ($_GET['invalid'] == 1) ? 'Invalid user name and password.' : ''; ?></span>
                 </form>
     </body>
 </html>

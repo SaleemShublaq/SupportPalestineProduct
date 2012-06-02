@@ -3,8 +3,6 @@
 	
     include('../includes/mysqlProccess/opendb.php');
     include('../model/user.model.php');
-	include('../model/functions/authenticateUser.php');
-	include('../model/functions/getUserModel.php');
 	include('../includes/functions/redirect.php');
 	$isAuthenticAdmin=false;
 	$isAuthenticCustomer=false;
@@ -18,7 +16,7 @@
 					$userModel = getUserModel($userName,$link);
 					$_SESSION['userModel']=$userModel;
 					$_SESSION['userNo']=$userModel->getUserId();
-					redirect("../adminstrator.php");
+					redirect("adminstrator.php");
 					return;
 			}elseif($type=='adminstrator'){
 				$isAuthenticCustomer = authenticateUser($userName,$password,$link);
@@ -26,7 +24,7 @@
 					$userModel = getUserModel($userName,$link);
 					$_SESSION['userModel']=$userModel;
 					$_SESSION['userNo']=$userModel->getUserId();
-					redirect("../costumer.php");
+					redirect("costumer.php");
 					return;
 			}else{
 					redirect("../login.php?invalid=1");
